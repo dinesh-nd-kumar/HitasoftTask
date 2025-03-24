@@ -1,9 +1,12 @@
-package com.example.hitasofttask.ui
+package com.example.hitasofttask.ui.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.hitasofttask.ui.CameraFragment
+import com.example.hitasofttask.ui.ListFragment
+import com.example.hitasofttask.ui.UserFragment
 
 
 class FragmentPageAdapter(
@@ -19,10 +22,10 @@ class FragmentPageAdapter(
 
     override fun createFragment(position: Int): Fragment {
         return when(position){
-            0 ->  PostFragment()
+            0 ->  UserFragment()
             1 -> CameraFragment()
             2 -> ListFragment()
-            else -> PostFragment()
+            else -> UserFragment()
         }
     }
 }

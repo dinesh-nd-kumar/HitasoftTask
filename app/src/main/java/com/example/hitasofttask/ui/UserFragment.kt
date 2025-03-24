@@ -1,6 +1,5 @@
 package com.example.hitasofttask.ui
 
-import android.icu.text.CaseMap.Title
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,9 +10,10 @@ import com.example.hitasofttask.MyViewModel
 import com.example.hitasofttask.databinding.FragmentPostBinding
 import com.example.hitasofttask.model.RequUser
 import com.example.hitasofttask.model.User
+import com.example.hitasofttask.ui.adapters.PostAdapter
 
 
-class PostFragment : Fragment(), PostAdapter.PostClickListener,CustomDialogFragment.DialogListener {
+class UserFragment : Fragment(), PostAdapter.PostClickListener,CustomDialogFragment.DialogListener {
 
     private var _binding: FragmentPostBinding? = null
     private val binding get() = _binding!!
@@ -62,7 +62,7 @@ class PostFragment : Fragment(), PostAdapter.PostClickListener,CustomDialogFragm
 
     private fun initRecycler(){
         binding.rvView.apply {
-            postAdapter = PostAdapter(emptyList(),this@PostFragment)
+            postAdapter = PostAdapter(emptyList(),this@UserFragment)
             adapter = postAdapter
 
         }

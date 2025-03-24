@@ -43,7 +43,7 @@ class CameraFragment : Fragment() {
         _binding = FragmentCameraBinding.inflate(inflater, container, false)
         cameraExecutor = Executors.newSingleThreadExecutor()
 
-        requestCameraPermissions() // Request both camera and storage permissions
+        requestCameraPermissions()
         binding.captureButton.setOnClickListener {
             takePicture()
         }
@@ -95,7 +95,7 @@ class CameraFragment : Fragment() {
         val contentValues = ContentValues().apply {
             put(MediaStore.MediaColumns.DISPLAY_NAME, "IMG_${System.currentTimeMillis()}.jpg")
             put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
-            put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/MyApp") // Saves in Pictures/MyApp folder
+            put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/MyApp") 
         }
 
         val outputOptions = ImageCapture.OutputFileOptions

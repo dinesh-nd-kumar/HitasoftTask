@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.hitasofttask.R
 import com.example.hitasofttask.databinding.FragmentHomeBinding
+import com.example.hitasofttask.ui.adapters.FragmentPageAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 

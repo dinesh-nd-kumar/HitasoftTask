@@ -1,4 +1,4 @@
-package com.example.hitasofttask.ui
+package com.example.hitasofttask.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.hitasofttask.databinding.PostRowItemBinding
 import com.example.hitasofttask.model.User
 
-class PostAdapter(var productList: List<User>, val listner:PostClickListener)
+class PostAdapter(var productList: List<User>, val listner: PostClickListener)
     : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
