@@ -2,6 +2,7 @@ package com.example.hitasofttask.PostRepo
 
 import android.content.Context
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.hitasofttask.PostRepo.roomdb.DatabaseBuilder
@@ -11,6 +12,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,7 +25,7 @@ class PostRepo(val context: Context) {
         fetchPostsFromRoom()
     }
     fun getLiveData(): LiveData<List<User>> {
-        return postLiveData
+        return data
     }
     fun newPost(p: RequUser){
         CoroutineScope(Dispatchers.IO).launch {
@@ -34,6 +36,11 @@ class PostRepo(val context: Context) {
                 DatabaseBuilder.getInstance(context).postDao().insertPost(postRes.body()!!)
                 fetchPostsFromRoom()
 
+            }
+            else{
+                withContext(Dispatchers.Main){
+                    Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
+                }
             }
 
 

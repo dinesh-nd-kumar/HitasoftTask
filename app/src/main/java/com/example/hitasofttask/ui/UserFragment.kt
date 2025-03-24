@@ -43,7 +43,7 @@ class UserFragment : Fragment(), PostAdapter.PostClickListener,CustomDialogFragm
 
         binding.addPost.setOnClickListener {
             val dialog = CustomDialogFragment(null,"Add"){ t1,t2 ->
-                val post = RequUser(t1,t1+"@gmail.com","Pass@123","https://picsum.photos/800")
+                val post = RequUser(t1, "$t1@gmail.com","Pass@123","https://picsum.photos/800")
                 viewModel!!.newPost(post)
 
             }
